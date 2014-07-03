@@ -7,7 +7,7 @@
   # I should be able to navigate to a trivia facts show page.
   # I should see the question, answer, and creater.
 
-3. As a user I want to be able to create a new trivia fact.
+3. As a user I want to be able to create a new trivia fact, so that I can contribute to the site.
   so that I can contribute my knowledge to the whole.
   # I should be able to go to a page with a form to add a new trivia fact
   # I should be able to fill out the form and be redirected to the trivia facts information page
