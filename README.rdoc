@@ -1,28 +1,67 @@
-== README
+1. As a user I want to be able to visit a page that has a list of trivia facts.
+  # I should be able to see a list of all the featured trivia facts.
+  # I should be able to see both the question and the answer.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+2. As a user I want to be able to go to a trivia facts information page,
+  so that I can view the question, answer, and creater.
+  # I should be able to navigate to a trivia facts show page.
+  # I should see the question, answer, and creater.
 
-Things you may want to cover:
+3. As a user I want to be able to create a new trivia fact.
+  so that I can contribute my knowledge to the whole.
+  # I should be able to go to a page with a form to add a new trivia fact
+  # I should be able to fill out the form and be redirected to the trivia facts information page
+  # I should be given an error if the fact already exsists or if I do not fill out the form
+    completely.
+  # I should be given a confirmation message if the trivia is saved
 
-* Ruby version
+4. As a user I want to be able to upvote or downvote a trivia fact,
+   so that I can help mediate trivia that are not true.
+   # I can find two buttons on a trivia information page.
+   # I can press false if I know it is false and true if I know it is true.
+   # My vote should be tallied and displayed on the page.
 
-* System dependencies
+5. As a user I want to be able to go to my page and see all the trivia facts I have collected.
+  # I can visit my page and see any trivia that I have collected
+  # The trivia should be in the same form as the trivia in the index
 
-* Configuration
+6. As a site visiter, I want to be able to sign up so that I can start
+  tracking my use of this site.
+  # I can visit a page with a sign up form
+  # If I fill out the form properly I get redirected to my profile page
+  # If I fill out the form incorrectly I get an error message.
 
-* Database creation
+7. As a user I want to be able to sign in and sign out.
+  # I can visit a page that has a form for me to sign in with
+  # Once signed in I can click a link to sign out.
 
-* Database initialization
+8. As a user I want to be able to edit my account, in case my information changes or
+  I messed up my initial sign up form.
+  # I can navigate to a page with all my information pre populated.
+  # I can change this information and resubmit it.
+  # If I insert valid information I get redirected to my profile page.
+  # If I insert invalid information I get an error message.
 
-* How to run the test suite
+9. As a user I want to be able to write a comment on a trivia show page
+  so that I may be able to correct the answer or simply express my opinion of it.
+  # I can visit a trivia show page and see a form to write a comment.
+  # If I fill out the form with valid input I stay on the page and get a confirmation message.
+  # If I fill out the form with invalid input I get an error message.
 
-* Services (job queues, cache servers, search engines, etc.)
+10. As an admin I can visit a page with all the unstaged trivia facts and view them.
+  # The trivia should have the question, the answer, and the sum of all the upvotes and downvotes.
+  # The trivia should have a link to stage the questions so that the admin may add content to the site
+  # A regular user should not be able to visit this page.
 
-* Deployment instructions
+11. As an admin I can visit a trivia's show page and edit the content
+    so that I can mediate sub par content.
+  # The show page should have an edit button so that I may change the content.
+  # If the admin fills in the page correctly they should be redirected to the trivia's show page.
+  # if the admin fills in the page with invalid information they should be given an error message.
 
-* ...
+12. As an admin I should be able to delete trivia if I know it to be false.
+  # I should be able to find a delete button on the index page for trivia.
+  # When i press it I should be redirected to the same page with a notification that i deleted the
+    trivia.
+  # If it does not delete I should see a error message.
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
