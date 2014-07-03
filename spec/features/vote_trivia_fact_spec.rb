@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-feature 'user votes on trivia fact', %Q{
+feature 'user votes on trivia fact', %Q(
   As a user I want to be able to upvote or downvote a trivia fact,
   so that I can help mediate trivia that are not true.
-} do
+) do
 
   # I can find two buttons on a trivia information page.
   # I can press false if I know it is false and true if I know it is true.

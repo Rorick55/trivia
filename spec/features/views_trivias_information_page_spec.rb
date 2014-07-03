@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-feature 'user views a trivia facts information page', %Q{
+feature 'user views a trivia facts information page', %Q(
   As a user I want to be able to go to a
   trivia facts information page.
-} do
+) do
 
   # I should be able to navigate to a trivia facts show page.
   # I should see the question, answer, and creater.

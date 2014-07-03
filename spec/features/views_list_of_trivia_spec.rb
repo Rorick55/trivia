@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-feature 'user views a list of trivia facts', %Q{
+feature 'user views a list of trivia facts', %Q(
   As a user I want to be able to visit a
   page that has a list of trivia facts.
-} do
+) do
 
   # I should be able to see a list of all the featured trivia facts.
   # I should be able to see both the question and the answer.

@@ -1,13 +1,14 @@
 require 'rails_helper'
 
-feature 'user creates a new trivia fact', %Q{
+feature 'user creates a new trivia fact', %Q(
   As a user I want to be able to create a new
   trivia fact, so that I can contribute to
   the site.
-} do
+) do
 
   # I should be able to go to a page with a form to add a new trivia fact
-  # I should be able to fill out the form and be redirected to the trivia facts information page
+  # I should be able to fill out the form and be redirected to the
+  #   trivia facts information page
   # I should be given an error if the fact already exsists or if I do not
   #   fill out the form completely.
   # I should be given a confirmation message if the trivia is saved
@@ -15,13 +16,15 @@ feature 'user creates a new trivia fact', %Q{
   scenario 'user inputs valid information' do
     visit new_trivia_fact_path
 
-    fill_in 'Question', with: 'What is the only species of deer where both the male and female have antlers?'
+    fill_in 'Question', with: 'What is the only species of deer where
+      both the male and female have antlers?'
     fill_in 'Answer', with: 'Reindeer'
     fill_in 'Category', with: 'Animals'
     click_on 'Submit'
 
     expect(page).to have_content 'Successfully added new trivia!'
-    expect(page).to have_content 'What is the only species of deer where both the male and female have antlers?'
+    expect(page).to have_content 'What is the only species of deer where
+      both the male and female have antlers?'
     expect(page).to have_content 'Reindeer'
   end
 
