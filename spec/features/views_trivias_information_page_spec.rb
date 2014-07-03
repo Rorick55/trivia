@@ -19,4 +19,3 @@ feature 'user views a trivia facts information page', %Q(
     expect(page).to have_content trivia_fact.user.username
   end
 end
-

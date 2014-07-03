@@ -30,5 +30,3 @@ feature 'user votes on trivia fact', %Q(
     expect(trivia.rank).to eq rank - 1
   end
 end
-
-

@@ -51,4 +51,3 @@ feature 'user creates a new trivia fact', %Q(
     expect(page).to_not have_content 'Successfully'
   end
 end
-
