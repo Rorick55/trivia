@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140703202339) do
+ActiveRecord::Schema.define(version: 20140703203427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "trivia_facts", force: true do |t|
     t.string   "question",    limit: 2000,                 null: false
@@ -22,6 +28,7 @@ ActiveRecord::Schema.define(version: 20140703202339) do
     t.integer  "category_id",                              null: false
     t.integer  "rank",                     default: 0
     t.boolean  "featured",                 default: false
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -9,7 +9,7 @@ feature 'user views a list of trivia facts', %Q(
   # I should be able to see both the question and the answer.
 
   scenario 'user views list of trivia facts' do
-    trivia_facts = FactoryGirl(:trivia_fact, 3)
+    trivia_facts = FactoryGirl.create_list(:trivia_fact, 3)
 
     visit trivia_facts_path
 

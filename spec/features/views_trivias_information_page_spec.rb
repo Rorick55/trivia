@@ -9,13 +9,12 @@ feature 'user views a trivia facts information page', %Q(
   # I should see the question, answer, and creater.
 
   scenario 'user views trivia information page' do
-    trivia_fact = FactoryGirl(:trivia_fact)
+    trivia_fact = FactoryGirl.create(:trivia_fact)
 
     visit trivia_fact_path(trivia_fact)
 
     expect(page).to have_content trivia_fact.answer
     expect(page).to have_content trivia_fact.question
-    expect(page).to have_content trivia_fact.category
-    expect(page).to have_content trivia_fact.user.username
+    expect(page).to have_content trivia_fact.category.name
   end
 end

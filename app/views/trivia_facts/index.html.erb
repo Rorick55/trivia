@@ -1,0 +1,10 @@
+<h1>Trivia</h1>
+
+
+
+<% @trivia_facts.each do |trivia| %>
+  <ul>
+    <li><%= trivia.question %></li>
+    <li><%= trivia.answer %></li>
+  </ul>
+<% end %>

@@ -6,6 +6,7 @@ class CreateTriviaFacts < ActiveRecord::Migration
       t.integer :category_id, null: false
       t.integer :rank, default: 0
       t.boolean :featured, default: false
+      t.integer :user_id
 
       t.timestamps
     end
