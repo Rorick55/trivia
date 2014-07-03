@@ -17,6 +17,7 @@ feature 'user creates a new trivia fact', %Q{
 
     fill_in 'Question', with: 'What is the only species of deer where both the male and female have antlers?'
     fill_in 'Answer', with: 'Reindeer'
+    fill_in 'Category', with: 'Animals'
     click_on 'Submit'
 
     expect(page).to have_content 'Successfully added new trivia!'
@@ -40,6 +41,7 @@ feature 'user creates a new trivia fact', %Q{
 
     fill_in 'Question', with: trivia.question
     fill_in 'Answer', with: trivia.answer
+    fill_in 'Category', with: trivia.category
     click_on 'Submit'
 
     expect(page).to have_content 'has already been taken'

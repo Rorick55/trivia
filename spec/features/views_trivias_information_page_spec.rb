@@ -15,6 +15,7 @@ feature 'user views a trivia facts information page', %Q{
 
     expect(page).to have_content trivia_fact.answer
     expect(page).to have_content trivia_fact.question
+    expect(page).to have_content trivia_fact.category
     expect(page).to have_content trivia_fact.user.username
   end
 end
