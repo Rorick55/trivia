@@ -7,7 +7,7 @@
   # I should be able to navigate to a trivia facts show page.
   # I should see the question, answer, and creater.
 
-3. As a user I want to be able to create a new trivia fact.
+3. As a user I want to be able to create a new trivia fact, so that I can contribute to the site.
   so that I can contribute my knowledge to the whole.
   # I should be able to go to a page with a form to add a new trivia fact
   # I should be able to fill out the form and be redirected to the trivia facts information page
@@ -42,24 +42,18 @@
   # If I insert valid information I get redirected to my profile page.
   # If I insert invalid information I get an error message.
 
-9. As a user I want to be able to write a comment on a trivia show page
-  so that I may be able to correct the answer or simply express my opinion of it.
-  # I can visit a trivia show page and see a form to write a comment.
-  # If I fill out the form with valid input I stay on the page and get a confirmation message.
-  # If I fill out the form with invalid input I get an error message.
-
-10. As an admin I can visit a page with all the unstaged trivia facts and view them.
+9. As an admin I can visit a page with all the unstaged trivia facts and view them.
   # The trivia should have the question, the answer, and the sum of all the upvotes and downvotes.
   # The trivia should have a link to stage the questions so that the admin may add content to the site
   # A regular user should not be able to visit this page.
 
-11. As an admin I can visit a trivia's show page and edit the content
+10. As an admin I can visit a trivia's show page and edit the content
     so that I can mediate sub par content.
   # The show page should have an edit button so that I may change the content.
   # If the admin fills in the page correctly they should be redirected to the trivia's show page.
   # if the admin fills in the page with invalid information they should be given an error message.
 
-12. As an admin I should be able to delete trivia if I know it to be false.
+11. As an admin I should be able to delete trivia if I know it to be false.
   # I should be able to find a delete button on the index page for trivia.
   # When i press it I should be redirected to the same page with a notification that i deleted the
     trivia.
