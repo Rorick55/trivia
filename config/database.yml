@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: trivia_production
-  username: trivia
-  password: <%= ENV['TRIVIA_DATABASE_PASSWORD'] %>
+  username:
+  password:

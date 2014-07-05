@@ -13,13 +13,14 @@ feature 'user creates a new trivia fact', %Q(
   #   fill out the form completely.
   # I should be given a confirmation message if the trivia is saved
 
+  let!(:category) { FactoryGirl.create(:category) }
   scenario 'user inputs valid information' do
     visit new_trivia_fact_path
 
     fill_in 'Question', with: 'What is the only species of deer where
       both the male and female have antlers?'
     fill_in 'Answer', with: 'Reindeer'
-    fill_in 'Category', with: 'Animals'
+    select category.name, from: 'Category'
     click_on 'Submit'
 
     expect(page).to have_content 'Successfully added new trivia!'
@@ -38,13 +39,13 @@ feature 'user creates a new trivia fact', %Q(
   end
 
   scenario 'user inputs duplicate information' do
-    trivia = FactoryGirl.create(:trivia_fact)
+    trivia = FactoryGirl.create(:trivia_fact, category: category)
 
     visit new_trivia_fact_path
 
     fill_in 'Question', with: trivia.question
     fill_in 'Answer', with: trivia.answer
-    fill_in 'Category', with: trivia.category
+    select category.name, from: 'Category'
     click_on 'Submit'
 
     expect(page).to have_content 'has already been taken'
