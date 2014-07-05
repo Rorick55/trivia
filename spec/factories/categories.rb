@@ -5,4 +5,3 @@ FactoryGirl.define do
     name 'History'
   end
 end
-

@@ -12,7 +12,8 @@ feature 'user creates a new trivia fact', %Q(
   # I should be given an error if the fact already exsists or if I do not
   #   fill out the form completely.
   # I should be given a confirmation message if the trivia is saved
-  let!(:category) { FactoryGirl.create(:category)}
+
+  let!(:category) { FactoryGirl.create(:category) }
   scenario 'user inputs valid information' do
     visit new_trivia_fact_path
 
