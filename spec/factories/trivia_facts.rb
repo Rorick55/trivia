@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :trivia_fact do
-    question 'Where does honey come from?'
+    sequence(:question) { |n| "Where does honey come from? #{n}" }
     answer 'Bees make it using nectar from flowers.'
     category
   end
