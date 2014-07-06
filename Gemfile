@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use postgresql as the database for Active Record
@@ -32,6 +32,11 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'launchy'
+  gem 'email_spec'
+end
+
+group :test do
+  gem 'coveralls', require: false
 end
 
 # Use ActiveModel has_secure_password
