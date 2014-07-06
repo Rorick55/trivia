@@ -15,22 +15,20 @@ feature 'user signs in', %Q(
 
     visit root_path
 
-    click_on 'Sign out'
+    click_on 'Sign Out'
 
     expect(page).to have_content "Signed out successfully."
-    expect(current_user).to eq false
   end
 
   scenario 'user signs in correctly' do
     visit new_user_session_path
 
     fill_in 'Email', with: user.email
-    fill_in 'password', with: user.password
+    fill_in 'Password', with: user.password
 
     click_on 'Sign in'
 
     expect(page).to have_content 'Signed in successfully'
-    expect(current_user).to eq user
   end
 
   scenario 'user signs in with missing information' do
@@ -39,7 +37,6 @@ feature 'user signs in', %Q(
     click_on 'Sign in'
 
     expect(page).to have_content "Invalid email or password."
-    expect(current_user).to eq false
   end
 
   scenario 'user already logged in' do

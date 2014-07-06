@@ -18,12 +18,11 @@ feature 'user signs up', %Q(
     fill_in 'Username', with: 'Halthedestroyer'
     fill_in 'Email', with: 'halthedestroyer@gmail.com'
     fill_in 'Password', with: 'password'
-    fill_in 'Password confirmaiton', with: 'password'
+    fill_in 'Password confirmation', with: 'password'
 
     click_on 'Sign up'
 
     expect(page).to have_content "Welcome! You have signed up successfully."
-    expect(current_user.first_name).to eq 'Hal'
   end
 
   scenario 'user inputs invalid information' do
@@ -32,7 +31,6 @@ feature 'user signs up', %Q(
     click_on 'Sign up'
 
     expect(page).to have_content "can't be blank"
-    expect(current_user).to eq false
   end
 
   scenario 'user inputs duplicate data' do
@@ -44,11 +42,10 @@ feature 'user signs up', %Q(
     fill_in 'Username', with: user.username
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    fill_in 'Password confirmaiton', with: user.password
+    fill_in 'Password confirmation', with: user.password
 
     click_on 'Sign up'
 
     expect(page).to have_content 'has already been taken'
-    expect(current_user).to eq false
   end
 end

@@ -32,6 +32,11 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'launchy'
+  gem 'email_spec'
+end
+
+group :test do
+  gem 'coveralls', require: false
 end
 
 # Use ActiveModel has_secure_password
