@@ -4,7 +4,8 @@
 
 <% @trivia_facts.each do |trivia| %>
   <ul>
-    <li><%= trivia.question %></li>
-    <li><%= trivia.answer %></li>
+    <li>Question: <%= trivia.question %></li>
+    <li>Answer: <%= trivia.answer %></li>
+    <li>Validity: <%= trivia.rank %></li>
   </ul>
 <% end %>

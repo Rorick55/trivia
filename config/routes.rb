@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   root to: "trivia_facts#index"
 
   resources :trivia_facts, only: [:index, :show, :create, :new]
+
+  resources :trivia_facts do
+    resources :votings, only: [:edit, :update, :create, :new]
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
