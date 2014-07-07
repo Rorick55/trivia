@@ -10,6 +10,16 @@
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
+    <ul class='nav'>
+      <li>
+        <%= render 'devise/menu/login_items' %>
+      </li>
+      <li>
+        <%= render 'devise/menu/registration_items' %>
+      </li>
+    </ul>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
   <body>
 
