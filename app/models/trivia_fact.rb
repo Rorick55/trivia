@@ -1,5 +1,5 @@
 class TriviaFact < ActiveRecord::Base
-  has_many :votings
+  has_many :votes
   belongs_to :category
   belongs_to :user
   validates :question, presence: true, uniqueness: true
@@ -7,7 +7,7 @@ class TriviaFact < ActiveRecord::Base
   validates :category, presence: true
 
   def total_votes
-    votings.sum(:vote)
+    votes.sum(:vote)
   end
 
   def update_rank

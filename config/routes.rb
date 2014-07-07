@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :trivia_facts, only: [:index, :show, :create, :new]
 
   resources :trivia_facts do
-    resources :votings, only: [:edit, :update, :create, :new]
+    resources :votes, only: [:edit, :update, :create, :new]
   end
 
   resources :user, only: :show

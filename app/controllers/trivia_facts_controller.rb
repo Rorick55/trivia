@@ -5,7 +5,7 @@ class TriviaFactsController < ApplicationController
 
   def show
     @trivia_fact = TriviaFact.find(params[:id])
-    @voting = Voting.new
+    @vote = Vote.new
   end
 
   def new
