@@ -1,5 +1,4 @@
 class VotingsController < ApplicationController
-
   def create
     @trivia_fact = TriviaFact.find(params[:trivia_fact_id])
     @voting = Voting.find_or_initialize_by(
@@ -13,7 +12,6 @@ class VotingsController < ApplicationController
       @trivia_fact.update_rank
       redirect_to trivia_fact_path(@trivia_fact)
     elsif @voting.save
-      binding.pry
       @trivia_fact.update_rank
       redirect_to trivia_fact_path(@trivia_fact)
     else
