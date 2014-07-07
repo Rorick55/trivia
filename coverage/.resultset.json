@@ -4,6 +4,7 @@
       "/Users/roryteam/Dropbox/trivia/app/models/user.rb": [
         1,
         1,
+        1,
         null,
         null,
         1,
@@ -23,6 +24,7 @@
         null
       ],
       "/Users/roryteam/Dropbox/trivia/app/models/trivia_fact.rb": [
+        1,
         1,
         1,
         1,
@@ -90,9 +92,14 @@
         null,
         null
       ],
+      "/Users/roryteam/Dropbox/trivia/app/controllers/user_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/roryteam/Dropbox/trivia/app/controllers/votings_controller.rb": [
         1,
-        null,
         1,
         2,
         2,
@@ -105,7 +112,6 @@
         2,
         2,
         2,
-        0,
         0,
         0,
         0,
@@ -120,6 +126,6 @@
         null
       ]
     },
-    "timestamp": 1404673932
+    "timestamp": 1404736780
   }
 }

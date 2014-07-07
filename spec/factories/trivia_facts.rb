@@ -5,5 +5,6 @@ FactoryGirl.define do
     sequence(:question) { |n| "Where does honey come from? #{n}" }
     answer 'Bees make it using nectar from flowers.'
     category
+    user
   end
 end

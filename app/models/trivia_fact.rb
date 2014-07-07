@@ -1,6 +1,7 @@
 class TriviaFact < ActiveRecord::Base
   has_many :votings
   belongs_to :category
+  belongs_to :user
   validates :question, presence: true, uniqueness: true
   validates :answer, presence: true
   validates :category, presence: true
