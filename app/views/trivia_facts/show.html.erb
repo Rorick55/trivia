@@ -2,11 +2,11 @@
 <h3><%= @trivia_fact.question %></h3>
 <p><%= @trivia_fact.answer %></p>
 
-<%= form_for [@trivia_fact, @voting] do |f| %>
+<%= form_for [@trivia_fact, @vote] do |f| %>
   <%= f.hidden_field :vote, value: 1 %>
   <%= f.submit "True" %>
 <%end%>
-<%= form_for [@trivia_fact, @voting] do |f| %>
+<%= form_for [@trivia_fact, @vote] do |f| %>
   <%= f.hidden_field :vote, value: -1 %>
   <%= f.submit "False" %>
 <%end%>
