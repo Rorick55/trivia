@@ -32,4 +32,12 @@ feature 'user votes on trivia fact', %Q(
 
     expect(trivia.total_votes).to eq rank - 1
   end
+
+  scenario 'unregistered user tries to vote' do
+    visit trivia_fact_path(trivia)
+
+    click_on 'True'
+
+    expect(page).to have_content "You must be logged in to do that"
+  end
 end
