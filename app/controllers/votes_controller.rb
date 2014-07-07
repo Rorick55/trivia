@@ -8,10 +8,7 @@ class VotesController < ApplicationController
     if !current_user
       flash[:notice] = "You must be logged in to do that"
       render template: "trivia_facts/show"
-    elsif @vote.update(vote_params)
-      @trivia_fact.update_rank
-      redirect_to trivia_fact_path(@trivia_fact)
-    elsif @vote.save
+    elsif @vote.update(vote_params) || @vote.save
       @trivia_fact.update_rank
       redirect_to trivia_fact_path(@trivia_fact)
     else
