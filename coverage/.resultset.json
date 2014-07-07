@@ -3,6 +3,7 @@
     "coverage": {
       "/Users/roryteam/Dropbox/trivia/app/models/user.rb": [
         1,
+        1,
         null,
         null,
         1,
@@ -27,6 +28,21 @@
         1,
         1,
         1,
+        1,
+        null,
+        1,
+        4,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null
+      ],
+      "/Users/roryteam/Dropbox/trivia/app/models/voting.rb": [
+        1,
+        1,
+        1,
         null
       ],
       "/Users/roryteam/Dropbox/trivia/app/controllers/trivia_facts_controller.rb": [
@@ -36,7 +52,8 @@
         null,
         null,
         1,
-        4,
+        6,
+        6,
         null,
         null,
         1,
@@ -72,8 +89,37 @@
         12,
         null,
         null
+      ],
+      "/Users/roryteam/Dropbox/trivia/app/controllers/votings_controller.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        null,
+        2,
+        0,
+        0,
+        2,
+        2,
+        2,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null
       ]
     },
-    "timestamp": 1404660123
+    "timestamp": 1404673932
   }
 }

@@ -10,23 +10,26 @@ feature 'user votes on trivia fact', %Q(
   # My vote should be tallied and displayed on the page.
 
   let!(:trivia) { FactoryGirl.create(:trivia_fact) }
+  let(:user) { FactoryGirl.create(:user) }
   scenario 'user upvotes a trivia fact' do
+    login_as user
     rank = trivia.rank
 
     visit trivia_fact_path(trivia)
 
     click_on 'True'
 
-    expect(trivia.rank).to eq rank + 1
+    expect(trivia.total_votes).to eq rank + 1
   end
 
   scenario 'user downvotes a trivia fact' do
+    login_as user
     rank = trivia.rank
 
     visit trivia_fact_path(trivia)
 
     click_on 'False'
 
-    expect(trivia.rank).to eq rank - 1
+    expect(trivia.total_votes).to eq rank - 1
   end
 end
