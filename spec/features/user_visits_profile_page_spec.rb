@@ -23,4 +23,3 @@ feature 'user visits their own profile page', %Q(
     end
   end
 end
-
