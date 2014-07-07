@@ -2,10 +2,21 @@
 
 
 
-<% @trivia_facts.each do |trivia| %>
-  <ul>
-    <li>Question: <%= trivia.question %></li>
-    <li>Answer: <%= trivia.answer %></li>
-    <li>Validity: <%= trivia.rank %></li>
+<div class="row">
+  <ul class="medium-block-grid-4">
+    <% @trivia_facts.each do |trivia| %>
+      <li>
+       <div class="flip">
+        <div class="card">
+            <div class="face front">
+                <%= trivia.question %>
+            </div>
+            <div class="face back">
+                <%= trivia.answer %>
+            </div>
+        </div>
+       </div>
+      </li>
+    <% end %>
   </ul>
-<% end %>
+</div>
