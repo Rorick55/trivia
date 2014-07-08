@@ -15,13 +15,6 @@
  *= require foundation_and_overrides
 
  */
-
- .nav li {
-  display: inline-block;
-  margin: 4px;
-  float: right;
- }
-
 .flip {
   -webkit-perspective: 800;
    width: 200px;
