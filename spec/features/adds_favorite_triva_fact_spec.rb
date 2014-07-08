@@ -42,4 +42,3 @@ feature 'user adds favorite trivia fact', %Q(
   end
 
 end
-
