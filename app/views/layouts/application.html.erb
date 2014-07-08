@@ -38,8 +38,15 @@
       </section>
     </nav>
   </div>
+    <% if notice %>
+      <p class="alert-box success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert-box alert"><%= alert %></p>
+    <% end %>
 
     <%= yield %>
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>
