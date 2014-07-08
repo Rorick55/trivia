@@ -2,5 +2,7 @@
 
 FactoryGirl.define do
   factory :vote do
+    user
+    trivia_fact
   end
 end
