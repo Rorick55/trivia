@@ -14,14 +14,16 @@ feature 'user adds favorite trivia fact', %Q(
   scenario 'user adds a favorite trivia fact' do
     user = FactoryGirl.create(:user)
     trivia_fact = FactoryGirl.create(:trivia_fact)
+    login_as user
 
-    visit trivia_facts_path
+    visit trivia_fact_path(trivia_fact)
+
     click_on 'Favorite'
+    expect(page).to have_content 'Trivia favorited!'
 
     visit user_path(user)
 
     expect(page).to have_content trivia_fact.question
-    expect(page).to have_content trivia_fact.answer
   end
 end
 
