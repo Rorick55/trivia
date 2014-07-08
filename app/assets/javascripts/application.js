@@ -13,13 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require turbolinks
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
 
 $(document).ready(function(){
-  $('.flip').click(function(){
+  $('.flip').on('click', function(){
       $(this).find('.card').addClass('flipped').mouseleave(function(){
           $(this).removeClass('flipped');
       });
