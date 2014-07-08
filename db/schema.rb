@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140707203842) do
+ActiveRecord::Schema.define(version: 20140708002256) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 20140707203842) do
   end
 
   add_index "categories", ["name"], name: "index_categories_on_name", unique: true, using: :btree
+
+  create_table "favorites", force: true do |t|
+    t.integer  "user_id",        null: false
+    t.integer  "trivia_fact_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "favorites", ["user_id", "trivia_fact_id"], name: "index_favorites_on_user_id_and_trivia_fact_id", unique: true, using: :btree
 
   create_table "trivia_facts", force: true do |t|
     t.text     "question",                    null: false
