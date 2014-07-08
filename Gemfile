@@ -35,6 +35,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'email_spec'
+  gem 'shoulda-matchers'
+  gem 'valid_attribute'
 end
 
 group :test do
