@@ -6,6 +6,7 @@ class TriviaFactsController < ApplicationController
   def show
     @trivia_fact = TriviaFact.find(params[:id])
     @vote = Vote.new
+    @favorite = Favorite.new
   end
 
   def new

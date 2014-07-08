@@ -10,3 +10,7 @@
   <%= f.hidden_field :vote, value: -1 %>
   <%= f.submit "False" %>
 <%end%>
+
+<%= form_for [@trivia_fact, @favorite] do |f| %>
+  <%= f.submit 'Favorite' %>
+<% end %>
