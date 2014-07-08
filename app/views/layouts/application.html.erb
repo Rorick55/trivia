@@ -10,20 +10,42 @@
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
-    <ul class='nav'>
-      <li>
-        <%= render 'devise/menu/login_items' %>
-      </li>
-      <li>
-        <%= render 'devise/menu/registration_items' %>
-      </li>
-    </ul>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-  <body>
+    <body>
+  <div class="contain-to-grid sticky">
+    <nav class="top-bar" data-topbar data-options="is_hover: false" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1><%= link_to 'Trivia', trivia_facts_path %></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="right">
+            <li class="has-dropdown">
+              <a href="#">Account</a>
+                <ul class="dropdown">
+                  <% if !current_user %>
+                    <li><%= render 'devise/menu/login_items' %></li>
+                    <li><%= render 'devise/menu/registration_items' %></li>
+                  <% else %>
+                    <li><%= render 'devise/menu/login_items' %></li>
+                    <li><%= link_to 'Edit Account', edit_user_registration_path(current_user) %></li>
+                    <li><%= link_to "#{current_user.username}", user_path(current_user) %></li>
+                  <% end %>
+                </ul>
+            </li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+    <% if notice %>
+      <p class="alert-box success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert-box alert"><%= alert %></p>
+    <% end %>
 
     <%= yield %>
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>
