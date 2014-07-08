@@ -10,7 +10,7 @@ RSpec.describe TriviaFact, type: :model do
   it { should validate_presence_of(:answer) }
   it { should validate_presence_of(:category) }
 
-  it { should validate_uniqueness_of(:question)}
+  it { should validate_uniqueness_of(:question) }
 
   describe 'total_votes' do
     it 'sums all votes' do
