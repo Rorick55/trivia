@@ -1,6 +1,6 @@
 class TriviaFactsController < ApplicationController
   def index
-    @trivia_facts = TriviaFact.all
+    @trivia_facts = TriviaFact.all.page(params[:page])
   end
 
   def show

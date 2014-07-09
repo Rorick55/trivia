@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'kaminari'
+
 gem 'nokogiri'
 
 gem 'foundation-rails'
