@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :role, inclusion: { in: ['user', 'admin'] }
+
+  def is_admin?
+    role == "admin"
+  end
 end
