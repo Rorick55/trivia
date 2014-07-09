@@ -6,6 +6,7 @@ class TriviaFact < ActiveRecord::Base
   validates :question, presence: true, uniqueness: true
   validates :answer, presence: true
   validates :category, presence: true
+  paginates_per 20
 
   def total_votes
     votes.sum(:vote)
