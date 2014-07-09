@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/<Rorick55>/<trivia>.svg?branch=master)](https://travis-ci.org/<Rorick55>/<trivia>) [![Code Climate](https://codeclimate.com/github/<Rorick55>/<trivia>.png)](https://codeclimate.com/github/<Rorick55>/<trivia>) [![Coverage Status](https://coveralls.io/repos/<Rorick55>/<trivia>/badge.png)](https://coveralls.io/r/<Rorick55>/<trivia>)
+
+
 1. As a user I want to be able to visit a page that has a list of trivia facts.
   # I should be able to see a list of all the featured trivia facts.
   # I should be able to see both the question and the answer.
