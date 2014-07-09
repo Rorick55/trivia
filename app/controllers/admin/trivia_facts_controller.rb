@@ -23,6 +23,17 @@ class Admin::TriviaFactsController < ApplicationController
     end
   end
 
+  def activate
+    @trivia_fact = TriviaFact.find(params[:id])
+    if @trivia_fact.update(featured: true)
+      flash[:notice] = 'Triva featured!'
+      redirect_to admin_trivia_facts_path
+    else
+      flash[:notice] = 'Unable to feature triva.'
+      render :index
+    end
+  end
+
   def destroy
     @trivia_fact = TriviaFact.find(params[:id])
     if @trivia_fact.delete
@@ -37,7 +48,7 @@ class Admin::TriviaFactsController < ApplicationController
   private
 
   def trivia_fact_params
-    params.require(:trivia_fact).permit(:question, :answer, :category_id, :featured)
+    params.require(:trivia_fact).permit(:question, :answer, :category_id)
   end
 
   def authorize_admin

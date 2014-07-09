@@ -16,7 +16,7 @@ feature 'admin features trivia fact', %Q(
 
     click_on "Feature"
 
-    expect(trivia_fact.featured).to eq true
+    expect(page).to have_content 'Triva featured!'
   end
 
   scenario 'user tries to feature a trivia fact' do

@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :trivia_facts, only: [:show, :index, :edit, :update, :delete, :destroy]
   end
+
+  get "admin/trivia_facts/:id/activate" => "admin/trivia_facts#activate", :as => "admin_active_trivia_fact"
 end
