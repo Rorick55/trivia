@@ -19,7 +19,7 @@ feature 'admin deletes a trivia fact', %Q(
 
     click_on 'Delete trivia'
 
-    expect(trivia_fact).to eq nil
+    expect(page).to have_content 'Successfully deleted trivia fact!'
   end
 
   scenario 'user tries to delete trivia fact' do

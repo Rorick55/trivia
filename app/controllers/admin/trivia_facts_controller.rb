@@ -9,19 +9,30 @@ class Admin::TriviaFactsController < ApplicationController
     @trivia_fact = TriviaFact.find(params[:id])
   end
 
+  def edit
+    @trivia_fact = TriviaFact.find(params[:id])
+  end
+
   def update
     @trivia_fact = TriviaFact.find(params[:id])
     if @trivia_fact.update(trivia_fact_params)
       flash[:notice] = 'Successfully updated trivia fact!'
       redirect_to admin_trivia_fact_path(@trivia_fact)
     else
-      render :show
+      render :edit
     end
   end
 
-
-
-
+  def destroy
+    @trivia_fact = TriviaFact.find(params[:id])
+    if @trivia_fact.delete
+      flash[:notice] = 'Successfully deleted trivia fact!'
+      redirect_to admin_trivia_facts_path
+    else
+      flash[:notice] = 'Could not deleted trivia fact'
+      render :index
+    end
+  end
 
   private
 
