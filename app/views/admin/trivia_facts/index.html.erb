@@ -1,0 +1,13 @@
+<h1>Unfeatured Trivia</h1>
+
+<%= @trivia_facts.each do |trivia| %>
+  <ul>
+    <li>Question: <%= trivia.question %></li>
+    <li>Answer: <%= trivia.answer %></li>
+    <li>Rank: <%= trivia.rank %></li>
+    <li>
+      <%= link_to 'Delete trivia', admin_trivia_fact_path(trivia), method: :delete %>
+      <%= link_to 'Feature', admin_trivia_fact_path(trivia, featured: true), method: :put %>
+    </li>
+  </ul>
+<% end %>
