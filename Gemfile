@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'nokogiri'
+
 gem 'foundation-rails'
 
 gem 'devise'
