@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 
   validates :role, inclusion: { in: ['user', 'admin'] }
 
-  def is_admin?
+  def admin?
     role == "admin"
   end
 end
