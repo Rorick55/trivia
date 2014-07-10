@@ -14,7 +14,9 @@ feature 'user creates a new trivia fact', %Q(
   # I should be given a confirmation message if the trivia is saved
 
   let!(:category) { FactoryGirl.create(:category) }
+  let(:user) { FactoryGirl.create(:user) }
   scenario 'user inputs valid information' do
+    login_as user
     visit new_trivia_fact_path
 
     fill_in 'Question', with: 'What is the only species of deer where
@@ -30,6 +32,7 @@ feature 'user creates a new trivia fact', %Q(
   end
 
   scenario 'user inputs invalid information' do
+    login_as user
     visit new_trivia_fact_path
 
     click_on 'Submit'
@@ -39,6 +42,7 @@ feature 'user creates a new trivia fact', %Q(
   end
 
   scenario 'user inputs duplicate information' do
+    login_as user
     trivia = FactoryGirl.create(:trivia_fact, category: category)
 
     visit new_trivia_fact_path

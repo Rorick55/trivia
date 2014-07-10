@@ -52,7 +52,7 @@ class Admin::TriviaFactsController < ApplicationController
   end
 
   def authorize_admin
-    unless current_user.is_admin?
+    unless current_user.admin?
       raise ActionController::RoutingError.new('Not Found')
     end
   end

@@ -38,7 +38,7 @@ feature 'user adds favorite trivia fact', %Q(
     visit trivia_fact_path(trivia_fact)
 
     click_on 'Favorite'
-    expect(page).to have_content 'You must be signed in to do that'
+    expect(page).to have_content 'You must be logged in to do that'
   end
 
 end

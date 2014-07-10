@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :user, only: :show
 
   namespace :admin do
-    resources :trivia_facts, only: [:show, :index, :edit, :update, :delete, :destroy]
+    resources :trivia_facts, except: [:new, :create]
   end
 
   get "admin/trivia_facts/:id/activate" => "admin/trivia_facts#activate", :as => "admin_active_trivia_fact"
