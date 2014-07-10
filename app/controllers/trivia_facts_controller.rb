@@ -3,8 +3,7 @@ class TriviaFactsController < ApplicationController
 
   def index
     if params[:format]
-      @trivia_facts = TriviaFact.where("category_id = #{params[:format]}")
-        .page(params[:page])
+      @trivia_facts = TriviaFact.where("category_id = #{params[:format]}").page(params[:page])
     else
       @trivia_facts = TriviaFact.order("RANDOM()").page(params[:page])
     end
