@@ -1,23 +1,31 @@
 <div class="row">
+  <% if params[:format] %>
+    <div class="category_head"><h1><%= @category %></h1></div>
+  <% else %>
+    <div class="category_head"><h1>Trivia</h1></div>
+  <% end %>
   <ul class="medium-block-grid-3">
     <% @trivia_facts.each do |trivia| %>
       <li>
-        <div class="outer_box" class="ui-widget-content">
-          <div class="favorite_button">
-            <%= form_for [trivia, @favorite] do |f| %>
-              <%= f.submit 'Favorite' %>
-            <% end %>
-          </div>
+        <div class="outer_box">
+        <div class="category_box">
+          <%= trivia.category.name %>
+        </div>
          <div class="flip">
           <div class="card">
               <div class="face front">
                   <%= trivia.question %>
               </div>
               <div class="face back">
-                  <%= trivia.answer %><br/>
+                  <%= trivia.answer %>
               </div>
           </div>
          </div>
+          <div class="favorite_button">
+            <%= form_for [trivia, @favorite] do |f| %>
+              <%= f.submit 'Favorite' %>
+            <% end %>
+          </div>
         </div>
       </li>
     <% end %>

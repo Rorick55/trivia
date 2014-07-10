@@ -33,6 +33,7 @@
                 <li><%= render 'devise/menu/registration_items' %></li>
               <% else %>
                 <li><%= link_to "#{current_user.username}", user_path(current_user) %></li>
+                <li><%= link_to 'Create new trivia', new_trivia_fact_path %></li>
                 <li><%= render 'devise/menu/login_items' %></li>
                 <li><%= link_to 'Edit Account', edit_user_registration_path(current_user) %></li>
               <% end %>

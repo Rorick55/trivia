@@ -1,22 +1,26 @@
-<h1><%= current_user.username %></h1>
+<h1 class="category_head"><%= current_user.username %>'s Favorites</h1>
 <div class="row">
-  <ul class="medium-block-grid-4">
-    <% current_user.trivia_facts.each do |trivia| %>
+  <ul class="medium-block-grid-3">
+    <% @trivia_facts.each do |trivia| %>
       <li>
-        <div class="flip">
+        <div class="outer_box">
+        <div class="category_box">
+          <%= trivia.category.name %>
+        </div>
+         <div class="flip">
           <div class="card">
-            <div class="face front">
-                <%= trivia.question %>
-            </div>
-            <div class="face back">
-                <%= trivia.answer %>
-            </div>
+              <div class="face front">
+                  <%= trivia.question %>
+              </div>
+              <div class="face back">
+                  <%= trivia.answer %><br/>
+              </div>
           </div>
+         </div>
         </div>
       </li>
     <% end %>
   </ul>
+  <%= paginate @trivia_facts %><br />
 </div>
-
-<%= link_to 'Trivia', trivia_facts_path %>
 

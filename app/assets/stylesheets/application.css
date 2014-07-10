@@ -13,8 +13,20 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
-
  */
+
+ body {
+  /*background: url(green_cup.png) repeat center center;*/
+  background-color: grey;
+  background-image:
+  repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+  repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+  linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+  linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+  background-size: 70px 120px;
+ }
+
+
 .flip {
   -webkit-perspective: 800;
    width: 230px;
@@ -37,7 +49,7 @@
   padding-top:  25%;
   padding-left: 15px;
   padding-right: 15px;
-  position: absolute;
+  position: relative;
   -webkit-backface-visibility: hidden ;
   z-index: 2;
     font-family: Georgia;
@@ -48,26 +60,38 @@
 .flip .card .front {
   position: absolute;
   z-index: 1;
-    background: black;
-    color: white;
+    background: url(natural_paper.png) repeat center center;
+    color: black;
     cursor: pointer;
 }
 .flip .card .back {
   -webkit-transform: rotatey(180deg);
-    background: blue;
-    background: grey;
-    color: black;
+    background: url(black_paper.png) repeat center center;
+    color: white;
     cursor: pointer;
 }
 
 .favorite_button {
-  margin-top: 50px;
+
   text-align: center;
-  margin-bottom: -40px;
+  margin-top: -35px;
+}
+
+.category_box {
+  text-align: center;
+  margin-bottom: -35px;
 }
 
 .outer_box {
-  width: 295px;
-  height: 295px;
-  background: darkgrey;
+  padding-top: 5px;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.category_head {
+  margin: 20px;
+  text-align: center;
 }
