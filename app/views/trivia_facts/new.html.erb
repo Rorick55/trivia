@@ -3,7 +3,7 @@
 
     <% if @trivia_fact.errors.any? %>
       <% @trivia_fact.errors.full_messages.each do |msg| %>
-        <%= msg %>
+        <p class="alert-box alert"><%= msg %></p>
       <% end %>
     <% end %>
 
