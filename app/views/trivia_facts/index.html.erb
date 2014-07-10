@@ -1,19 +1,25 @@
 <div class="row">
-  <ul class="medium-block-grid-4">
+  <ul class="medium-block-grid-3">
     <% @trivia_facts.each do |trivia| %>
       <li>
-       <div class="flip">
-        <div class="card">
-            <div class="face front">
-                <%= trivia.question %>
-            </div>
-            <div class="face back">
-                <%= trivia.answer %>
-            </div>
+        <div class="outer_box" class="ui-widget-content">
+          <div class="favorite_button">
+            <%= form_for [trivia, @favorite] do |f| %>
+              <%= f.submit 'Favorite' %>
+            <% end %>
+          </div>
+         <div class="flip">
+          <div class="card">
+              <div class="face front">
+                  <%= trivia.question %>
+              </div>
+              <div class="face back">
+                  <%= trivia.answer %><br/>
+              </div>
+          </div>
+         </div>
         </div>
-       </div>
       </li>
-
     <% end %>
   </ul>
   <%= paginate @trivia_facts %><br />

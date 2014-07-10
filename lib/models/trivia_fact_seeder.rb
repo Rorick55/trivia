@@ -11,7 +11,7 @@ class TriviaFactSeeder
     category_with_num = location.split('>').pop
     category = category_with_num.split(' ')
     category.pop
-    if category.include?('TRIVIA') || category.include?('Trivia')
+    if category.include?('TRIVIA') || category.include?('Trivia') && category.length != 1
       category.pop
     end
     category = category.join(' ')

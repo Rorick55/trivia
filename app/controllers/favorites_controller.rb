@@ -11,6 +11,7 @@ class FavoritesController < ApplicationController
     else
       flash[:notice] = 'Trivia has already been favorited'
     end
-    redirect_to trivia_fact_path(@trivia_fact)
+
+    redirect_to trivia_facts_path
   end
 end

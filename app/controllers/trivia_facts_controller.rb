@@ -1,6 +1,7 @@
 class TriviaFactsController < ApplicationController
   def index
-    @trivia_facts = TriviaFact.all.page(params[:page])
+    @trivia_facts = TriviaFact.order('RANDOM()').page(params[:page])
+    @favorite = Favorite.new
   end
 
   def show
