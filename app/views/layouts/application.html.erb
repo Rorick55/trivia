@@ -10,41 +10,55 @@
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
-    <body>
-  <div class="contain-to-grid sticky">
-    <nav class="top-bar" data-topbar data-options="is_hover: false" data-topbar>
-      <ul class="title-area">
-        <li class="name">
-          <h1><%= link_to 'Trivia', trivia_facts_path %></h1>
-        </li>
-      </ul>
-      <section class="top-bar-section">
-        <ul class="right">
-            <li class="has-dropdown">
-              <a href="#">Account</a>
-                <ul class="dropdown">
-                  <% if !current_user %>
-                    <li><%= render 'devise/menu/login_items' %></li>
-                    <li><%= render 'devise/menu/registration_items' %></li>
-                  <% else %>
-                    <li><%= render 'devise/menu/login_items' %></li>
-                    <li><%= link_to 'Edit Account', edit_user_registration_path(current_user) %></li>
-                    <li><%= link_to "#{current_user.username}", user_path(current_user) %></li>
-                  <% end %>
-                </ul>
-            </li>
-        </ul>
-      </section>
-    </nav>
-  </div>
-    <% if notice %>
-      <p class="alert-box success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert-box alert"><%= alert %></p>
-    <% end %>
+  <body>
 
-    <%= yield %>
+    <div class="off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+        <div class="contain-to-grid sticky">
+          <nav class="tab-bar" data-topbar data-options="sticky_on: large">
+            <section class="left-small">
+              <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+            </section>
+            <section class="middle tab-bar-section">
+              <h1 class="title"><%= link_to 'Trivia', trivia_facts_path %></h1>
+            </section>
+          </nav>
+        </div>
+
+        <aside class="left-off-canvas-menu">
+          <ul class="off-canvas-list">
+            <li><label>User</label></li>
+              <% if !current_user %>
+                <li><%= render 'devise/menu/login_items' %></li>
+                <li><%= render 'devise/menu/registration_items' %></li>
+              <% else %>
+                <li><%= link_to "#{current_user.username}", user_path(current_user) %></li>
+                <li><%= render 'devise/menu/login_items' %></li>
+                <li><%= link_to 'Edit Account', edit_user_registration_path(current_user) %></li>
+              <% end %>
+            <li><label>Categories</label></li>
+            <% Category.all.each do |category| %>
+              <li><%= link_to category.name, trivia_facts_path(category) %></li>
+            <% end %>
+          </ul>
+        </aside>
+
+        <section class="main-section">
+
+          <% if notice %>
+            <p class="alert-box success"><%= notice %></p>
+          <% end %>
+          <% if alert %>
+            <p class="alert-box alert"><%= alert %></p>
+          <% end %>
+
+          <%= yield %>
+
+        </section>
+
+        <a class="exit-off-canvas"></a>
+      </div>
+    </div>
 
     <%= javascript_include_tag "application" %>
   </body>
