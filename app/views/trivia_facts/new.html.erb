@@ -1,16 +1,18 @@
-<%= form_for @trivia_fact do |f| %>
+<div class="row">
+  <%= form_for @trivia_fact do |f| %>
 
-  <% if @trivia_fact.errors.any? %>
-    <% @trivia_fact.errors.full_messages.each do |msg| %>
-      <%= msg %>
+    <% if @trivia_fact.errors.any? %>
+      <% @trivia_fact.errors.full_messages.each do |msg| %>
+        <%= msg %>
+      <% end %>
     <% end %>
-  <% end %>
 
-  <%= f.label :question %>
-  <%= f.text_field :question %>
-  <%= f.label :answer %>
-  <%= f.text_field :answer %>
-  <%= f.label :category_id %>
-  <%= f.collection_select(:category_id, Category.all, :id, :name) %>
-  <%= f.submit 'Submit' %>
-<% end %>
+    <%= f.label :question %>
+    <%= f.text_field :question %>
+    <%= f.label :answer %>
+    <%= f.text_field :answer %>
+    <%= f.label :category_id %>
+    <%= f.collection_select(:category_id, Category.all, :id, :name) %>
+    <%= f.submit 'Submit' %>
+  <% end %>
+</div>
