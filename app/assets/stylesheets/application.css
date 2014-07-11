@@ -97,5 +97,5 @@
 }
 
 .pagination {
-  text-align: center;
+  visibility: hidden;
 }
