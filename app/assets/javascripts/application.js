@@ -14,14 +14,24 @@
 //= require jquery_ujs
 //= require foundation
 //= require_tree .
+//= require jquery.infinitescroll
 
 $(function(){ $(document).foundation(); });
 
 $(document).ready(function(){
-  $('.flip').on('click', function(){
+  $(document).on('click','.flip', function(){
       $(this).find('.card').addClass('flipped').mouseleave(function(){
           $(this).removeClass('flipped');
       });
       return false;
   });
 });
+
+$(document).ready(function() {
+  return $("#posts").infinitescroll({
+    navSelector: "nav.pagination",
+    nextSelector: "nav.pagination a[rel=next]",
+    itemSelector: "#posts li.posts"
+  });
+});
+
