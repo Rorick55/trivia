@@ -2,7 +2,7 @@ class Admin::TriviaFactsController < ApplicationController
   before_action :authorize_admin
 
   def index
-    @trivia_facts = TriviaFact.all
+    @trivia_facts = TriviaFact.where(featured: false).order('created_at DESC').page(params[:page])
   end
 
   def show

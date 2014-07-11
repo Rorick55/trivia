@@ -1,8 +1,8 @@
 <h1 class="category_head"><%= current_user.username %>'s Favorites</h1>
 <div class="row">
-  <ul class="medium-block-grid-3">
+  <ul class="medium-block-grid-3" id="posts">
     <% @trivia_facts.each do |trivia| %>
-      <li>
+      <li class="posts">
         <div class="outer_box">
         <div class="category_box">
           <%= trivia.category.name %>
@@ -21,6 +21,6 @@
       </li>
     <% end %>
   </ul>
-  <%= paginate @trivia_facts %><br />
+  <div class="paginate"><%= paginate @trivia_facts %></div>
 </div>
 
