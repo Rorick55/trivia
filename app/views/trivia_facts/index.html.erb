@@ -4,31 +4,32 @@
   <% else %>
     <div class="category_head"><h1>Trivia</h1></div>
   <% end %>
-  <ul class="medium-block-grid-3">
+
+  <ul class="medium-block-grid-3" id="posts">
     <% @trivia_facts.each do |trivia| %>
-      <li>
+      <li class="posts">
         <div class="outer_box">
-        <div class="category_box">
-          <%= trivia.category.name %>
-        </div>
-         <div class="flip">
-          <div class="card">
-              <div class="face front">
-                  <%= trivia.question %>
-              </div>
-              <div class="face back">
-                  <%= trivia.answer %>
-              </div>
+          <div class="category_box">
+            <%= trivia.category.name %>
           </div>
-         </div>
-          <div class="favorite_button">
-            <%= form_for [trivia, @favorite] do |f| %>
-              <%= f.submit 'Favorite' %>
-            <% end %>
-          </div>
+           <div class="flip">
+            <div class="card">
+                <div class="face front">
+                    <%= trivia.question %>
+                </div>
+                <div class="face back">
+                    <%= trivia.answer %>
+                </div>
+            </div>
+           </div>
+            <div class="favorite_button">
+              <%= form_for [trivia, @favorite] do |f| %>
+                <%= f.submit 'Favorite' %>
+              <% end %>
+            </div>
         </div>
       </li>
     <% end %>
   </ul>
-  <%= paginate @trivia_facts %><br />
+  <div class="paginate"><%= paginate @trivia_facts %></div>
 </div>
