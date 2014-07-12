@@ -106,3 +106,8 @@ h1 {
 .pagination {
   visibility: hidden;
 }
+
+.voting {
+  display: inline;
+  text-align: center;
+}

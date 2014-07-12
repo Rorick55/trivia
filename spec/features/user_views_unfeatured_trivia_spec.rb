@@ -21,7 +21,5 @@ feature 'user views a list of unfeatured trivia', %Q(
       expect(page).to have_content trivia.question
       expect(page).to have_content trivia.answer
     end
-    expect(page).to have_content 'True'
-    expect(page).to have_content 'False'
   end
 end
