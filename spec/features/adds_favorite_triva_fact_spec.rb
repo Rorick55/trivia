@@ -11,7 +11,7 @@ feature 'user adds favorite trivia fact', %Q(
   # I can view a list of my favorite trivia facts
   # on my profile page
   let(:user) { FactoryGirl.create(:user) }
-  let(:trivia_fact) { FactoryGirl.create(:trivia_fact) }
+  let(:trivia_fact) { FactoryGirl.create(:trivia_fact, featured: true) }
   scenario 'user adds a favorite trivia fact' do
     login_as user
 
