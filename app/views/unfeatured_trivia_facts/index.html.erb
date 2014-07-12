@@ -17,16 +17,25 @@
                 </div>
             </div>
            </div>
-            <div class="favorite_button">
-              <%= form_for [trivia, @vote] do |f| %>
-                <%= f.hidden_field :vote, value: 1 %>
-                <%= f.submit "True" %>
-              <%end%>
-              <%= form_for [trivia, @vote] do |f| %>
-                <%= f.hidden_field :vote, value: -1 %>
-                <%= f.submit "False" %>
-              <%end%>
-            </div>
+            <ul class="button-group voting">
+              <li>
+                <%= form_for [trivia, @vote] do |f| %>
+                  <%= f.hidden_field :vote, value: 1 %>
+                  <%= f.submit "True", class: 'button tiny'%>
+                <%end%>
+              </li>
+              <% if trivia.total_votes >= 0 %>
+                <li class="total_votes_green"><%= trivia.total_votes %></li>
+              <% else %>
+                <li class="total_votes_red"><%= trivia.total_votes %></li>
+                <% end %>
+              <li>
+                <%= form_for [trivia, @vote] do |f| %>
+                  <%= f.hidden_field :vote, value: -1 %>
+                  <%= f.submit "False", class: 'button tiny'%>
+                <%end%>
+              </li>
+              </ul>
         </div>
       </li>
     <% end %>
