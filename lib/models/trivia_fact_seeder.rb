@@ -29,7 +29,7 @@ class TriviaFactSeeder
       return 'People'
     elsif ['World', 'International'].include? category
       return 'International'
-    elsif ['Food', 'Cocktails and Drinks'].include? category
+    elsif ['Food', 'Cocktails & Drinks'].include? category
       return 'Food'
     elsif ['Miscellaneous', 'Misc', 'Easy', 'Funny', 'General', 'General Knowledge', 'Harder', 'Kids', 'Business'].include? category
       return 'Miscellaneous'
@@ -61,108 +61,3 @@ class TriviaFactSeeder
     end
   end
 end
-
-
-
-
-
-
-
-["Animal",
-  "History",
- "American History",
- "World History",
- "American",
- "Arts",
- "Cinema",
- "TV",
- "Business",
- "Cartoons",
- "Dance",
- "Easy",
- "Food",
- "Cocktails & Drinks",
- "Funny",
- "General",
- "General Knowledge",
- "Harder",
- "International",
- "Invention",
- "Kids",
- "Language",
- "Stupid Laws",
- "Legal",
- "Literature",
- "Medical",
- "Human Body",
- "Cinema and TV",
- "Military",
- "Misc",
- "Miscellaneous",
- "Movie",
- "Music",
- "Mythology",
- "Nature",
- "People",
- "Famous People",
- "Cities and States",
- "Politics",
- "Presidential",
- "Science",
- "Space",
- "Sports",
- "International Sports",
- "U.S.",
- "Word",
- "World"]
-
-
-
-
-["Animal",
-  "History",
- "American History",
- "World History",
- "American",
- "Arts",
- "Cinema",
- "TV",
- "Business",
- "Cartoons",
- "Dance",
- "Easy",
- "Food",
- "Cocktails & Drinks",
- "Funny",
- "General",
- "General Knowledge",
- "Harder",
- "International",
- "Invention",
- "Kids",
- "Language",
- "Stupid Laws",
- "Legal",
- "Literature",
- "Medical",
- "Human Body",
- "Cinema and TV",
- "Military",
- "Misc",
- "Miscellaneous",
- "Movie",
- "Music",
- "Mythology",
- "Nature",
- "People",
- "Famous People",
- "Cities and States",
- "Politics",
- "Presidential",
- "Science",
- "Space",
- "Sports",
- "International Sports",
- "U.S.",
- "Word",
- "World"]

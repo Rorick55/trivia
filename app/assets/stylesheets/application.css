@@ -16,14 +16,16 @@
  */
 
  body {
-  /*background: url(green_cup.png) repeat center center;*/
-  background-color: grey;
+  background: url(dark_wood_@2X.png) repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+/*  background-color: grey;
   background-image:
   repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
   repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
   linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
   linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
-  background-size: 70px 120px;
+  background-size: 70px 120px;*/
  }
 
 
@@ -80,8 +82,12 @@
 .category_box {
   text-align: center;
   margin-bottom: -35px;
+  color: white;
 }
 
+h1 {
+  color: white;
+}
 .outer_box {
   padding-top: 5px;
   width: 300px;
@@ -94,6 +100,7 @@
 .category_head {
   margin: 20px;
   text-align: center;
+  color: white;
 }
 
 .pagination {
