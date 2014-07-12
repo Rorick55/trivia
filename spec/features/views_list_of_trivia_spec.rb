@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'user views a list of trivia facts', %Q(
+feature 'user views a list of featured trivia facts', %Q(
   As a user I want to be able to visit a
   page that has a list of trivia facts.
 ) do
@@ -9,13 +9,13 @@ feature 'user views a list of trivia facts', %Q(
   # I should be able to see both the question and the answer.
 
   scenario 'user views list of trivia facts' do
-    trivia_facts = FactoryGirl.create_list(:trivia_fact, 3)
+    trivia_fact = FactoryGirl.create(:trivia_fact, featured: true)
 
     visit trivia_facts_path
 
-    trivia_facts.each do |trivia|
-      expect(page).to have_content trivia.question
-      expect(page).to have_content trivia.answer
-    end
+
+      expect(page).to have_content trivia_fact.question
+      expect(page).to have_content trivia_fact.answer
+
   end
 end

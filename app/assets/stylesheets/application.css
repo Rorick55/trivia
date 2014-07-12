@@ -10,20 +10,22 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require foundation_and_overrides
  *= require_tree .
  *= require_self
- *= require foundation_and_overrides
  */
 
  body {
-  /*background: url(green_cup.png) repeat center center;*/
-  background-color: grey;
+  background: url(dark_wood_@2X.png) repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+/*  background-color: grey;
   background-image:
   repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
   repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
   linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
   linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
-  background-size: 70px 120px;
+  background-size: 70px 120px;*/
  }
 
 
@@ -74,14 +76,19 @@
 
 .favorite_button {
   text-align: center;
-  margin-top: -35px;
+  margin-top: -37px;
+
 }
 
 .category_box {
   text-align: center;
   margin-bottom: -35px;
+  color: white;
 }
 
+h1 {
+  color: white;
+}
 .outer_box {
   padding-top: 5px;
   width: 300px;
@@ -94,8 +101,47 @@
 .category_head {
   margin: 20px;
   text-align: center;
+  color: white;
 }
 
 .pagination {
   visibility: hidden;
 }
+
+.voting {
+  margin-top: -37.5px;
+  margin-left: 75px;
+}
+
+.total_votes_red {
+  color: red;
+  height: 30px;
+  width: 40px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.total_votes_green {
+  color: green;
+  height: 30px;
+  width: 40px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.favorite_button .tiny {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+  font-size: 0.75em;
+}
+
+.voting .tiny {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+  font-size: 0.75em;
+}
+

@@ -3,10 +3,10 @@ class TriviaFactsController < ApplicationController
 
   def index
     if params[:format]
-      @trivia_facts = TriviaFact.where("category_id = #{params[:format]}").page(params[:page])
+      @trivia_facts = TriviaFact.where(featured: true).where("category_id = #{params[:format]}").order('id DESC').page(params[:page])
       @category = Category.find(params[:format]).name
     else
-      @trivia_facts = TriviaFact.order("RANDOM()").page(params[:page])
+      @trivia_facts = TriviaFact.where(featured: true).order("RANDOM()").page(params[:page])
       @category = "Trivia"
     end
     @favorite = Favorite.new
@@ -26,7 +26,7 @@ class TriviaFactsController < ApplicationController
     @trivia_fact = TriviaFact.new(trivia_fact_params)
     if @trivia_fact.save
       flash[:notice] = "Successfully added new trivia!"
-      redirect_to trivia_fact_path(@trivia_fact)
+      redirect_to unfeatured_trivia_facts_path
     else
       render :new
     end

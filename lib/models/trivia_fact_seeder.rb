@@ -15,6 +15,35 @@ class TriviaFactSeeder
       category.pop
     end
     category = category.join(' ')
+    if ['History', 'American History', 'World History'].include? category
+      return 'History'
+    elsif ['Animal', 'Nature'].include? category
+      return 'Animals and Nature'
+    elsif ['American', 'U.S.', 'Cities and States', 'Presidential'].include? category
+      return 'America'
+    elsif ['Cinema', 'TV', 'Cartoons', 'Movie', 'Cinema and TV'].include? category
+      return 'Television and Cinema'
+    elsif ['Arts', 'Dance', 'Literature', 'Music'].include? category
+      return 'Arts and Literature'
+    elsif ['People', 'Famous People'].include? category
+      return 'People'
+    elsif ['World', 'International'].include? category
+      return 'International'
+    elsif ['Food', 'Cocktails & Drinks'].include? category
+      return 'Food'
+    elsif ['Miscellaneous', 'Misc', 'Easy', 'Funny', 'General', 'General Knowledge', 'Harder', 'Kids', 'Business'].include? category
+      return 'Miscellaneous'
+    elsif ['Language', 'Word'].include? category
+      return 'Language'
+    elsif ['Stupid Laws', 'Legal'].include? category
+      return 'Legal'
+    elsif ['Sports', 'International Sports'].include? category
+      return 'Sports'
+    elsif ['Science', 'Space', 'Medical', 'Human Body'].include? category
+      return 'Science'
+    else
+      return category
+    end
   end
 
   def create_category

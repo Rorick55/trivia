@@ -7,12 +7,14 @@ class VotesController < ApplicationController
       user: current_user,
       trivia_fact: @trivia_fact
       )
-
     if @vote.update(vote_params) || @vote.save
       @trivia_fact.update_rank
-      redirect_to trivia_fact_path(@trivia_fact)
+      redirect_to unfeatured_trivia_facts_path
     else
-      redirect_to trivia_fact_path(@trivia_fact)
+      @trivia_facts = TriviaFact.where(featured: false).order(:created_at).page(params[:page])
+      @vote = Vote.new
+      @favorite = Favorite.new
+      render template: 'unfeatured_trivia_facts/index'
     end
   end
 

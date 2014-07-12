@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "trivia_facts#index"
 
+  resources :unfeatured_trivia_facts, only: :index
+
   resources :trivia_facts, only: [:index, :show, :create, :new]
 
   resources :trivia_facts do

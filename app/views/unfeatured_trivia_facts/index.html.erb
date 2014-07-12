@@ -18,16 +18,24 @@
             </div>
            </div>
             <ul class="button-group voting">
-             <% if trivia.total_votes >= 0 %>
+              <li>
+                <%= form_for [trivia, @vote] do |f| %>
+                  <%= f.hidden_field :vote, value: 1 %>
+                  <%= f.submit "True", class: 'tiny button radius'%>
+                <%end%>
+              </li>
+              <% if trivia.total_votes >= 0 %>
                 <li class="total_votes_green"><%= trivia.total_votes %></li>
               <% else %>
                 <li class="total_votes_red"><%= trivia.total_votes %></li>
                 <% end %>
-              <li><%= link_to 'Feature', admin_active_trivia_fact_path(trivia) %>-</li>
-
-              <li><%= link_to 'Delete', admin_trivia_fact_path(trivia), method: :delete %>-</li>
-              <li><%= link_to 'Edit', edit_admin_trivia_fact_path(trivia) %></li>
-            </ul>
+              <li>
+                <%= form_for [trivia, @vote] do |f| %>
+                  <%= f.hidden_field :vote, value: -1 %>
+                  <%= f.submit "False", class: 'tiny button radius'%>
+                <%end%>
+              </li>
+              </ul>
         </div>
       </li>
     <% end %>
