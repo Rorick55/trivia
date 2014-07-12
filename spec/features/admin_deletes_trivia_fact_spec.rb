@@ -17,7 +17,7 @@ feature 'admin deletes a trivia fact', %Q(
 
     visit admin_trivia_facts_path
 
-    click_on 'Delete trivia'
+    click_on 'Delete'
 
     expect(page).to have_content 'Successfully deleted trivia fact!'
   end
@@ -28,6 +28,6 @@ feature 'admin deletes a trivia fact', %Q(
 
     visit trivia_facts_path
 
-    expect(page).to_not have_content 'Delete trivia'
+    expect(page).to_not have_content 'Delete'
   end
 end

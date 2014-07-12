@@ -21,7 +21,7 @@
               <li>
                 <%= form_for [trivia, @vote] do |f| %>
                   <%= f.hidden_field :vote, value: 1 %>
-                  <%= f.submit "True", class: 'button tiny'%>
+                  <%= f.submit "True", class: 'tiny button radius'%>
                 <%end%>
               </li>
               <% if trivia.total_votes >= 0 %>
@@ -32,7 +32,7 @@
               <li>
                 <%= form_for [trivia, @vote] do |f| %>
                   <%= f.hidden_field :vote, value: -1 %>
-                  <%= f.submit "False", class: 'button tiny'%>
+                  <%= f.submit "False", class: 'tiny button radius'%>
                 <%end%>
               </li>
               </ul>

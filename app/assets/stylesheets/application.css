@@ -76,7 +76,7 @@
 
 .favorite_button {
   text-align: center;
-  margin-top: -35px;
+  margin-top: -37px;
 
 }
 
@@ -110,7 +110,7 @@ h1 {
 
 .voting {
   margin-top: -37.5px;
-  margin-left: 65px;
+  margin-left: 75px;
 }
 
 .total_votes_red {
@@ -129,8 +129,19 @@ h1 {
   font-size: 20px;
 }
 
-.button {
-  width: 65px;
-  height: 30px;
-  text-align: center;
+.favorite_button .tiny {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+  font-size: 0.75em;
 }
+
+.voting .tiny {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+  font-size: 0.75em;
+}
+

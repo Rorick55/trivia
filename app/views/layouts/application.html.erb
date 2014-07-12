@@ -38,10 +38,14 @@
               <% end %>
             <li><label>Help us out!</label></li>
                 <li><%= link_to "Unfeatured Trivia", unfeatured_trivia_facts_path %></li>
-                <li><%= link_to 'Create new trivia', new_trivia_fact_path %></li>
+                <li><%= link_to 'Create New Trivia', new_trivia_fact_path %></li>
             <li><label>Categories</label></li>
             <% Category.all.each do |category| %>
               <li><%= link_to category.name, trivia_facts_path(category) %></li>
+            <% end %>
+            <%if current_user && current_user.role == 'admin' %>
+              <li><label>Admin</label></li>
+              <li><%= link_to 'Admin Unfeatured Trivia', admin_trivia_facts_path %> </li>
             <% end %>
           </ul>
         </aside>

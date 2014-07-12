@@ -1,14 +1,36 @@
-<h1>Unfeatured Trivia</h1>
+<div class="row">
+<div class="category_head"><h1>Unfeatured Trivia</h1></div>
+  <ul class="medium-block-grid-3" id="posts">
+    <% @trivia_facts.each do |trivia| %>
+      <li class="posts">
+        <div class="outer_box">
+          <div class="category_box">
+            <%= trivia.category.name %>
+          </div>
+           <div class="flip">
+            <div class="card">
+                <div class="face front">
+                    <%= trivia.question %>
+                </div>
+                <div class="face back">
+                    <%= trivia.answer %>
+                </div>
+            </div>
+           </div>
+            <ul class="button-group voting">
+             <% if trivia.total_votes >= 0 %>
+                <li class="total_votes_green"><%= trivia.total_votes %></li>
+              <% else %>
+                <li class="total_votes_red"><%= trivia.total_votes %></li>
+                <% end %>
+              <li><%= link_to 'Feature', admin_active_trivia_fact_path(trivia) %>-</li>
 
-<% @trivia_facts.each do |trivia| %>
-  <ul>
-    <li>Question: <%= trivia.question %></li>
-    <li>Answer: <%= trivia.answer %></li>
-    <li>Rank: <%= trivia.rank %></li>
-    <li>
-      <%= link_to 'Delete trivia', admin_trivia_fact_path(trivia), method: :delete %>
-      <%= link_to 'Feature', admin_active_trivia_fact_path(trivia) %>
-    </li>
+              <li><%= link_to 'Delete', admin_trivia_fact_path(trivia), method: :delete %>-</li>
+              <li><%= link_to 'Edit', edit_admin_trivia_fact_path(trivia) %></li>
+            </ul>
+        </div>
+      </li>
+    <% end %>
   </ul>
-<% end %>
-<div class="paginate"><%= paginate @trivia_facts %></div>
+  <div class="paginate"><%= paginate @trivia_facts %></div>
+</div>

@@ -26,7 +26,7 @@ class TriviaFactsController < ApplicationController
     @trivia_fact = TriviaFact.new(trivia_fact_params)
     if @trivia_fact.save
       flash[:notice] = "Successfully added new trivia!"
-      redirect_to trivia_fact_path(@trivia_fact)
+      redirect_to unfeatured_trivia_facts_path
     else
       render :new
     end
