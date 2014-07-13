@@ -20,7 +20,7 @@
               <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
             </section>
             <section class="middle tab-bar-section">
-              <h1 class="title"><%= link_to 'Trivia', trivia_facts_path %></h1>
+              <h1 class="title"><%= link_to 'Strictly Quizness', trivia_facts_path %></h1>
             </section>
           </nav>
         </div>
@@ -37,7 +37,7 @@
                 <li><%= link_to 'Edit Account', edit_user_registration_path(current_user) %></li>
               <% end %>
             <li><label>Help us out!</label></li>
-                <li><%= link_to "Unfeatured Trivia", unfeatured_trivia_facts_path %></li>
+                <li><%= link_to "User Contributed Trivia", unfeatured_trivia_facts_path %></li>
                 <li><%= link_to 'Create New Trivia', new_trivia_fact_path %></li>
             <li><label>Categories</label></li>
             <% Category.all.each do |category| %>
