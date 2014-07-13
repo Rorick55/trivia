@@ -56,7 +56,7 @@ class TriviaFactSeeder
         ques_ans_array = item.text.split('A:')
         question = ques_ans_array[0].split.join(' ')
         answer = ques_ans_array[1].split.join(' ')
-        if qestion.length <= 150 && answer.length <= 150
+        if question.length <= 150 && answer.length <= 150
           TriviaFact.find_or_create_by(question: question, answer: answer, category: create_category, featured: true)
         end
       end

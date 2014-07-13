@@ -43,10 +43,15 @@ group :development, :test do
   gem 'email_spec'
   gem 'shoulda-matchers'
   gem 'valid_attribute'
+  gem 'dotenv-rails'
 end
 
 group :test do
   gem 'coveralls', require: false
+end
+
+group :production do
+  gem 'rails_12factor'
 end
 
 # Use ActiveModel has_secure_password
