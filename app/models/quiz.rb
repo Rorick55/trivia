@@ -7,7 +7,7 @@ class Quiz < ActiveRecord::Base
     quiz = []
     trivia_facts = TriviaFact.order('RANDOM()').limit(10)
     trivia_facts.each do |question|
-      quiz << question
+      quiz << question.id
     end
     create(trivia_questions: quiz)
   end

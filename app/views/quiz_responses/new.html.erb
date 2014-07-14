@@ -3,17 +3,17 @@
 
   <ul class="medium-block-grid-3">
   <%= form_for [@quiz_response] do |f| %>
-  <% ques_num = 1 %>
+    <% ques_num = 1 %>
     <% @quiz_questions.trivia_questions.each do |question| %>
       <li>
         <div class="outer_box">
           <div class="category_box">
-            <%= question.category.name %>
+            <%= TriviaFact.find(question).category.name %>
           </div>
            <div class="flip">
             <div class="card">
                 <div class="face front">
-                    <%= question.question %>
+                    <%= TriviaFact.find(question).question %>
                 </div>
             </div>
            </div>

@@ -42,15 +42,15 @@ class QuizResponse < ActiveRecord::Base
     end
   end
 
-  def total_response
+  def total
     total = []
     answer_num = 1
-    quiz.trivia_questions.each do |question|
-      if question.answer == answer_col(answer_num)
+    self.quiz.trivia_questions.each do |question|
+      if TriviaFact.find(question).answer == answer_col(answer_num)
         total << 1
         answer_num += 1
       end
     end
-    "You got #{total} correct out of 10!"
+    total.length
   end
 end
