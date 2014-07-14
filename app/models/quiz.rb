@@ -6,6 +6,6 @@ class Quiz < ActiveRecord::Base
   def self.random_quiz
     quiz = []
     10.times { quiz << TriviaFact.order('RANDOM()').first }
-    quiz
+    self.create(trivia_questions: quiz)
   end
 end
