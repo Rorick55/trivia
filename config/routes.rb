@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   resources :user, only: :show
 
+  resources :quiz_responses, only: [:new, :create, :update, :edit]
+
   namespace :admin do
     resources :trivia_facts, except: [:new, :create]
   end
