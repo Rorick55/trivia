@@ -1,8 +1,8 @@
 <div class="row">
   <div class="category_head"><h1>Random Quiz</h1></div>
 
-  <ul class="medium-block-grid-3">
   <%= form_for [@quiz_response] do |f| %>
+   <ul class="medium-block-grid-3">
     <% ques_num = 1 %>
     <% @quiz_questions.trivia_questions.each do |question| %>
       <li>
@@ -14,6 +14,9 @@
             <div class="card">
                 <div class="face front">
                     <%= TriviaFact.find(question).question %>
+                </div>
+                <div class="face back">
+                NO PEAKING!
                 </div>
             </div>
            </div>

@@ -4,7 +4,7 @@
     <% answer_num = 1 %>
     <% @quiz.trivia_questions.each do |question| %>
       <li class="posts">
-      <% if TriviaFact.find(question).answer == @quiz_responses.answer_col(answer_num) %>
+      <% if TriviaFact.find(question).answer.downcase == @quiz_responses.answer_col(answer_num).downcase %>
         <div class="correct">
       <% else %>
         <div class="incorrect">

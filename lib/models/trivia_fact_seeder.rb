@@ -55,9 +55,17 @@ class TriviaFactSeeder
       if item.text.include?('A:')
         ques_ans_array = item.text.split('A:')
         question = ques_ans_array[0].split.join(' ')
-        answer = ques_ans_array[1].split.join(' ')
-        if question.length <= 150 && answer.length <= 150
+        answer = ques_ans_array[1].split.join(' ').gsub("\u00A0", ' ').strip
+
+        while answer[-1] == '.' || answer[-1] == '?' || answer[-1] == ' '
+          answer.slice!(-1)
+        end
+        if question.length <= 150 && answer.split(' ').length <= 2
+          TriviaFact.find_or_create_by(question: question, answer: answer, category: create_category, featured: true, quiz_question: true)
+        elsif question.length <= 150 && answer.length <= 150
           TriviaFact.find_or_create_by(question: question, answer: answer, category: create_category, featured: true)
+        else
+          nil
         end
       end
     end

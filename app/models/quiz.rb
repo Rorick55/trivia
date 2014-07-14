@@ -5,7 +5,7 @@ class Quiz < ActiveRecord::Base
 
   def self.random_quiz
     quiz = []
-    trivia_facts = TriviaFact.order('RANDOM()').limit(10)
+    trivia_facts = TriviaFact.where(quiz_question: true).order('RANDOM()').limit(10)
     trivia_facts.each do |question|
       quiz << question.id
     end

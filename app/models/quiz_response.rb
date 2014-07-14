@@ -46,7 +46,7 @@ class QuizResponse < ActiveRecord::Base
     total = []
     answer_num = 1
     self.quiz.trivia_questions.each do |question|
-      if TriviaFact.find(question).answer == answer_col(answer_num)
+      if TriviaFact.find(question).answer.downcase == answer_col(answer_num).downcase
         total << 1
         answer_num += 1
       end
