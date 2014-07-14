@@ -7,8 +7,9 @@ class QuizResponsesController < ApplicationController
   def create
     @quiz_response = QuizResponse.new(quiz_response_params)
     @quiz_response.user = current_user
+    binding.pry
     if @quiz_response.save
-      flash[:notice] = @quiz_response.score_response
+      flash[:notice] = @quiz_response.total_response
       redirect_to quiz_path(@quiz_response.quiz)
     else
       render :new

@@ -1,11 +1,14 @@
 class Quiz < ActiveRecord::Base
   has_many :quiz_responses
-  has_many :users, though: :quiz_responses
+  has_many :users, through: :quiz_responses
   validates :trivia_questions, presence: true
 
   def self.random_quiz
     quiz = []
-    10.times { quiz << TriviaFact.order('RANDOM()').first }
-    self.create(trivia_questions: quiz)
+    trivia_facts = TriviaFact.order('RANDOM()').limit(10)
+    trivia_facts.each do |question|
+      quiz << question
+    end
+    create(trivia_questions: quiz)
   end
 end
