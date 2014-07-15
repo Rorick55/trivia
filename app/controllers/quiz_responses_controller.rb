@@ -3,7 +3,6 @@ class QuizResponsesController < ApplicationController
     @quizzes = current_user.quiz_responses
   end
 
-
   def new
     @quiz_questions = Quiz.random_quiz
     @quiz_response = QuizResponse.new

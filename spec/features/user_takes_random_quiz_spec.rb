@@ -10,7 +10,7 @@ feature 'user takes a random quiz', %Q(
   # I can fill out an answer for each question.
   # I can submit my quiz and see which ones I got right and wrong.
 
-  let!(:trivia_fact) { FactoryGirl.create(:trivia_fact, featured: true, quiz_question: true)}
+  let!(:trivia_fact) { FactoryGirl.create(:trivia_fact, featured: true, quiz_question: true) }
   let(:user) { FactoryGirl.create(:user) }
   scenario 'user inputs valid answers' do
     login_as user
