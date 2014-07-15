@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 20140713223955) do
     t.string   "answer8",    null: false
     t.string   "answer9",    null: false
     t.string   "answer10",   null: false
+    t.string   "answer11",   null: false
+    t.string   "answer12",   null: false
     t.integer  "user_id",    null: false
     t.integer  "quiz_id",    null: false
     t.datetime "created_at"

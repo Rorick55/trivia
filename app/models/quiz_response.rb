@@ -37,6 +37,10 @@ class QuizResponse < ActiveRecord::Base
       answer9
     when 10
       answer10
+    when 11
+      answer11
+    when 12
+      answer12
     else
       false
     end

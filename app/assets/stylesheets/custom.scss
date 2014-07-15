@@ -1,6 +1,6 @@
 $black_paper: url("https://s3.amazonaws.com/trivia_bucket/black_paper.png");
 $white_paper: url("https://s3.amazonaws.com/trivia_bucket/natural_paper.png");
-$dark_wood: url("https://s3.amazonaws.com/trivia_bucket/books_and_goldfish.jpg");
+$dark_wood: url("https://s3.amazonaws.com/trivia_bucket/night_skyline.jpg");
 
  ///////// Main /////////
 
@@ -154,5 +154,13 @@ h1 {
 }
 
 .score {
+  color: white;
+}
+
+/////// Quiz Trivia ////////
+
+.answer_field {
+  text-align: center;
+  margin-top: -37px;
   color: white;
 }
