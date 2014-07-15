@@ -1,6 +1,6 @@
 $black_paper: url("https://s3.amazonaws.com/trivia_bucket/black_paper.png");
 $white_paper: url("https://s3.amazonaws.com/trivia_bucket/natural_paper.png");
-$dark_wood: url("https://s3.amazonaws.com/trivia_bucket/dark_wood_%402X.png");
+$dark_wood: url("https://s3.amazonaws.com/trivia_bucket/books_and_goldfish.jpg");
 
  ///////// Main /////////
 
@@ -151,4 +151,8 @@ h1 {
   padding-left: 1.2em;
   padding-right: 1.2em;
   font-size: 0.75em;
+}
+
+.score {
+  color: white;
 }
