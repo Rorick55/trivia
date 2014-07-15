@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="category_head"><h1>Quiz Answers</h1></div>
+  <ul class="medium-block-grid-3" id="posts">
+    <% answer_num = 1 %>
+    <% @quiz.trivia_questions.each do |question| %>
+      <li class="posts">
+        <% if TriviaFact.find(question).answer.downcase == @quiz_responses.answer_col(answer_num).downcase %>
+          <div class="correct">
+        <% else %>
+          <div class="incorrect">
+        <% end %>
+          <div class="category_box">
+            <%= TriviaFact.find(question).category.name %>
+          </div>
+           <div class="flip">
+              <div class="card">
+                <div class="face front">
+                  <%= TriviaFact.find(question).question %>
+                </div>
+                <div class="face back">
+                  Answer:<br>
+                  <%= TriviaFact.find(question).answer %><br><br>
+                  Your Answer:<br>
+                  <%= @quiz_responses.answer_col(answer_num) %>
+                </div>
+              </div>
+            </div>
+            <div class="favorite_button">
+              <%= form_for [TriviaFact.find(question), @favorite] do |f| %>
+                <%= f.submit 'Favorite', class: 'tiny button radius' %>
+              <% end %>
+            </div>
+        </div>
+      </li>
+      <% answer_num += 1 %>
+    <% end %>
+  </ul>
+</div>

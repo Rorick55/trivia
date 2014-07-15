@@ -1,0 +1,12 @@
+<div class="row">
+  <ul>
+    <% quiz_num = 1 %>
+    <% @quizzes.each do |quiz_taken| %>
+      <li>
+        <%= link_to "Quiz \##{quiz_num}", edit_quiz_response_path(quiz_taken) %> -
+        <span class='score'><%= quiz_taken.total %>/10</span>
+      </li>
+      <% quiz_num += 1 %>
+    <% end %>
+  </ul>
+</div>

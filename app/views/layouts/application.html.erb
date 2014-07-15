@@ -35,6 +35,9 @@
                 <li><%= link_to "#{current_user.username}", user_path(current_user) %></li>
                 <li><%= render 'devise/menu/login_items' %></li>
                 <li><%= link_to 'Edit Account', edit_user_registration_path(current_user) %></li>
+                <li><label>Quizzes</label></li>
+                  <li><%= link_to "Take a Random Quiz", new_quiz_response_path %></li>
+                  <li><%= link_to "Retake a Quiz", quiz_responses_path %></li>
               <% end %>
             <li><label>Help us out!</label></li>
                 <li><%= link_to "User Contributed Trivia", unfeatured_trivia_facts_path %></li>

@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="category_head"><h1>Random Quiz</h1></div>
+  <%= form_for [@quiz_response] do |f| %>
+    <ul class="medium-block-grid-3">
+      <% ques_num = 1 %>
+      <% @quiz_questions.trivia_questions.each do |question| %>
+        <li>
+          <div class="outer_box">
+            <div class="category_box">
+              <%= TriviaFact.find(question).category.name %>
+            </div>
+            <div class="flip">
+              <div class="card">
+                <div class="face front">
+                  <%= TriviaFact.find(question).question %>
+                </div>
+                <div class="face back">
+                  NO PEAKING!
+                </div>
+              </div>
+            </div>
+            <div class="favorite_button">
+              <%= f.label "answer#{ques_num}" %>
+              <%= f.text_field "answer#{ques_num}", value: '' %>
+            </div>
+          </div>
+        </li>
+        <% ques_num += 1 %>
+      <% end %>
+      <%= f.hidden_field :quiz_id, value: @quiz_questions.id %>
+    </ul>
+    <%= f.submit 'Submit', class: 'tiny button radius' %>
+  <% end %>
+</div>
