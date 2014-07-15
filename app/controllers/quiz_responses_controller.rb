@@ -39,6 +39,6 @@ class QuizResponsesController < ApplicationController
   private
 
   def quiz_response_params
-    params.require(:quiz_response).permit(:answer1, :answer2, :answer3, :answer4, :answer5, :answer6, :answer7, :answer8, :answer9, :answer10, :quiz_id)
+    params.require(:quiz_response).permit(:answer1, :answer2, :answer3, :answer4, :answer5, :answer6, :answer7, :answer8, :answer9, :answer10, :answer11, :answer12, :quiz_id)
   end
 end

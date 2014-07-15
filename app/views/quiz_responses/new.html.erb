@@ -19,9 +19,8 @@
                 </div>
               </div>
             </div>
-            <div class="favorite_button">
-              <%= f.label "answer#{ques_num}" %>
-              <%= f.text_field "answer#{ques_num}" %>
+            <div class="answer_field">
+              <%= f.text_field "answer#{ques_num}", value: "", placeholder: "Answer \##{ques_num}" %>
             </div>
           </div>
         </li>
