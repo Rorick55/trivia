@@ -1,6 +1,13 @@
 <div class="row">
   <div class="category_head"><h1>Random Quiz</h1></div>
   <%= form_for [@quiz_response] do |f| %>
+
+    <% if @quiz_response.errors.any? %>
+      <% @quiz_response.errors.full_messages.each do |msg| %>
+        <p class="alert-box alert"><%= msg %></p>
+      <% end %>
+    <% end %>
+
     <ul class="medium-block-grid-3">
       <% ques_num = 1 %>
       <% @quiz_questions.trivia_questions.each do |question| %>
