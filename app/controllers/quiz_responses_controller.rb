@@ -12,7 +12,7 @@ class QuizResponsesController < ApplicationController
     @quiz_response = QuizResponse.new(quiz_response_params)
     @quiz_response.user = current_user
     if @quiz_response.save
-      flash[:notice] = "You got #{@quiz_response.total} out of 10!"
+      flash[:notice] = "You got #{@quiz_response.total} out of 12!"
       redirect_to quiz_path(@quiz_response.quiz)
     else
       @quiz_questions = Quiz.random_quiz
@@ -29,7 +29,7 @@ class QuizResponsesController < ApplicationController
   def update
     @quiz_response = QuizResponse.find(params[:id])
     if @quiz_response.update(quiz_response_params)
-      flash[:notice] = "You got #{@quiz_response.total} out of 10!"
+      flash[:notice] = "You got #{@quiz_response.total} out of 12!"
       redirect_to quiz_path(@quiz_response.quiz)
     else
       render :edit

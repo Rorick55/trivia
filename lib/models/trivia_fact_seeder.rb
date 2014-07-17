@@ -29,8 +29,6 @@ class TriviaFactSeeder
       return 'People'
     elsif ['World', 'International'].include? category
       return 'International'
-    elsif ['Food', 'Cocktails & Drinks'].include? category
-      return 'Food'
     elsif ['Miscellaneous', 'Misc', 'Easy', 'Funny', 'General', 'General Knowledge', 'Harder', 'Kids', 'Business'].include? category
       return 'Miscellaneous'
     elsif ['Language', 'Word'].include? category
