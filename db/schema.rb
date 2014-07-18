@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140713223955) do
+ActiveRecord::Schema.define(version: 20140718111728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,18 +34,18 @@ ActiveRecord::Schema.define(version: 20140713223955) do
   add_index "favorites", ["user_id", "trivia_fact_id"], name: "index_favorites_on_user_id_and_trivia_fact_id", unique: true, using: :btree
 
   create_table "quiz_responses", force: true do |t|
-    t.string   "answer1",    null: false
-    t.string   "answer2",    null: false
-    t.string   "answer3",    null: false
-    t.string   "answer4",    null: false
-    t.string   "answer5",    null: false
-    t.string   "answer6",    null: false
-    t.string   "answer7",    null: false
-    t.string   "answer8",    null: false
-    t.string   "answer9",    null: false
-    t.string   "answer10",   null: false
-    t.string   "answer11",   null: false
-    t.string   "answer12",   null: false
+    t.string   "answer1"
+    t.string   "answer2"
+    t.string   "answer3"
+    t.string   "answer4"
+    t.string   "answer5"
+    t.string   "answer6"
+    t.string   "answer7"
+    t.string   "answer8"
+    t.string   "answer9"
+    t.string   "answer10"
+    t.string   "answer11"
+    t.string   "answer12"
     t.integer  "user_id",    null: false
     t.integer  "quiz_id",    null: false
     t.datetime "created_at"
