@@ -14,21 +14,10 @@ feature 'user takes a random quiz', %Q(
   let(:user) { FactoryGirl.create(:user) }
   scenario 'user inputs valid answers' do
     login_as user
-    visit new_trivia_quiz_path
-
-    fill_in 'Answer', with: 'George'
-    click_on 'Submit'
-
-    expect(page).to have_content 'You got'
-    expect(page).to have_content 'Successfully completed quiz'
-  end
-
-  scenario 'user inputs invalid answers' do
-    login_as user
-    visit new_trivia_quiz_path
+    visit new_quiz_response_path
 
     click_on 'Submit'
 
-    expect(page).to have_content "can't be blank"
+    expect(page).to have_content 'out of 12'
   end
 end
