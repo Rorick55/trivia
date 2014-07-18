@@ -5,7 +5,7 @@ $dark_wood: url("https://s3.amazonaws.com/trivia_bucket/leaf_and_books_free_hd_w
  ///////// Main /////////
 
 body {
-background: $dark_wood repeat center center;
+background: $dark_wood;
 background-size: cover;
 background-attachment: fixed;
 }
@@ -177,5 +177,13 @@ h1 {
   text-align: center;
   margin-top: -37px;
   color: white;
+}
+
+.quiz_submit {
+  text-align: center;
+}
+
+.quiz_retake {
+  font-size: 20px;
 }
 
