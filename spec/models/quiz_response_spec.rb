@@ -9,7 +9,7 @@ RSpec.describe QuizResponse, type: :model do
 
   it { should validate_uniqueness_of(:user_id).scoped_to(:quiz_id) }
 
-   describe 'answer_col' do
+  describe 'answer_col' do
     it 'helps call column based on number' do
       quiz_response = FactoryGirl.create(:quiz_response)
       expect(quiz_response.answer_col(5)).to eq quiz_response.answer5
