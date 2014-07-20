@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :quiz do
-    trivia_questions [100, 500, 600, 700, 800, 900, 270, 1000, 508, 409, 672, 567]
+    trivia_questions [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
   end
 end

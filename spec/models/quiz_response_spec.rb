@@ -16,11 +16,4 @@ RSpec.describe QuizResponse, type: :model do
       expect(quiz_response.answer_col(24)).to eq false
     end
   end
-
-  describe 'total' do
-    it 'sums up all the correct answers' do
-      quiz_response = FactoryGirl.create(:quiz_response)
-      expect(quiz_response.total).to eq 0
-    end
-  end
 end
