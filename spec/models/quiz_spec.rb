@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Quiz, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should have_many :quiz_responses }
+  it { should have_many :users }
+
+  it { should validate_presence_of(:trivia_questions) }
 end
